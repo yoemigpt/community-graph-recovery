@@ -1,0 +1,57 @@
+\section*{Lemma 1:}
+
+with probability larger than $1 - \frac{1}{n}$ it holds that :
+
+\begin{center}
+
+$|\langle W_2, B^* - B \rangle| \le \Sigma_{j\neq k} (2(lnn+|D|_{\infty})|Z_{:j} - Z_{:k}|_{\infty} + 2\sqrt{6lnn}V_{j} |Z_{:j} - Z_{:k}|_2^2)|B_{G_jG_k}|_1$
+
+\end{center}
+
+\begin{center}
+
+With, $V_{j} = max_{c \in \{1..n\}} Z_{cj}(1-Z_{cj}) $ 
+
+\end{center}
+
+\section*{Proof:}
+
+Condsider any $a$ and $b$ in $[n]$ and let $j$ and $k$ be such that $a\in G_j$ and $b\in G_k$. If $j=k$, $(W_2)_{ab}=0$. if $j\neq k$, then we have :
+
+\begin{center}
+
+\begin{align*}
+(W_2)_{ab} &= [E_{b:} - E_{a:}].[Z_{:j} - Z_{:k}] \\ &= \sum_{c\neq a, c\neq b} (\mathcal{E}_{bc} - \mathcal{E}_{ac}).(Z_{cj} - Z_{ck}) + \mathcal{E}_{ab}(Z_{aj} + Z_{bk} - Z_{bj} - Z_{ak}) - D_{bb}.(Z_{bj} - Z_{bk}) - D_{aa}.(Z_{aj} - Z_{ak}). 
+\end{align*}
+
+
+\end{center} 
+
+Hence $\mathbb{E}[(W_2)_{ab}] = D_{bb}.(Z_{bj} - Z_{bk}) + D_{aa}.(Z_{aj} - Z_{ak})$.
+
+By Berstein's inequality :
+
+\begin{center}
+\begin{align*}
+\mathbb{P}(|(W_2)_{ab} - \mathbb{E}[(W_2)_{ab}]| > t) \le 2exp(-\frac{\frac{1}{2}t^2}{Var((W_2)_{ab}) + \frac{2}{3}|Z_{:j} - Z_{:k}|_{\infty} })
+\end{align*}
+\end{center}
+
+With :  
+\begin{center}
+\begin{align*}
+Var((W_2)_{ab}) &= \sum_{c \neq a, c\neq b} (Var(\mathcal{E}_{bc}) + Var(\mathcal{E}_{ac})).(Z_{cj} - Z_{ck})^2 + Var(\mathcal{E}_{ab})(Z_{aj} + Z_{bk} - Z_{bj} - Z_{ak})^2\\&=\sum_{c \neq a, c\neq b} (Z_{ck}(1-Z_{ck}) + Z_{cj}(1-Z_{cj})).(Z_{cj} - Z_{ck})^2 \\ &+ \frac{Z_{ak}(1-Z_{ak})+Z_{bj}(1-Z_{bj})}{2}(Z_{aj} + Z_{bk} - Z_{bj} - Z_{ak})^2 
+\end{align*}
+\end{center}
+
+Hence with probability less than $\frac{1}{n^3}$, it holds that :
+
+\begin{center}
+
+$|(W_2)_{ab} - \mathbb{E}[(W_2)_{ab}]| \le 2.lnn|Z_{:j} - Z_{:k}|_{\infty} + \sqrt{6.lnn} Var((W_2)_{ab})$
+
+but $Var((W_2)_{ab}) \le (V_j+V_k)|Z_{:j} - Z_{:k}|_2^2$
+
+By a union bound we have the inequality required.
+
+\end{center}
