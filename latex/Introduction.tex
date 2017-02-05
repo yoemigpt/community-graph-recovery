@@ -1,4 +1,4 @@
-\begin{document}
+\section*{Introduction}
 $n$ individuals
 $K$ communities
 Each individual belongs to exactly one community
@@ -16,26 +16,27 @@ and $B_{i,j} = 0$ otherwise.
 Following the notations of [2], we now write $X = ZA^t + E$, where $Z = AC$ and $E = \mathcal{E} - D$. In doing so we can see the SBM model as a special instance of the G-latent models defined in [2]. 
 This paper shows that the main guarantees and results of [2] can be successfully adapted to the SBM model.
 Denoting $\Delta(C) = \min_{j<k}(C_{kk}+C_{jj}-2C_{jk})$, namely we show that under some conditions on $\Delta(C)$, one can recover the exact matrix $B*$ by solving a convex optimization problem :
-Let $\mathcal{C} = \begin{Bmatrix}
-  B \succeq 0
-\left\ {}
-\right\ \\ \Sigma_a B_{ab}=1, \forall b
+Let 
+\begin{align*}
+\mathcal{C} = \begin{Bmatrix}
+  B \succeq 0 \\ \Sigma_a B_{ab}=1, \forall b
  & \\ B_{ab}\geq 0,\forall a,b
- & \\ \mbox{tr}(B) = K \right\ 
- 
-\end{Bmatrix} 
-\subset \mathbb{R}^{p\times p}$.
-Let $\widehat{\Sigma}=X^tX$ and $\widehat{\Gamma} = \frac{1}{n}E^tE$.
-PECOK algorithm :
-1/ Estimate $B*$ by $\widehat{B} = \displaystyle{\mbox{argmax}_{B\in \mathcal{C}}<\widehat{\Sigma}-\widehat{\Gamma},B>}$
-2/ Estimate $G*$ by applying a clustering algorithm to the columns of $\widehat{B}$.
+ & \\ \mbox{tr}(B) = K 
+\end{Bmatrix}
+\subset \mathbb{R}^{p\times p}
+\end{align*}
 
-In this paper, we develop suficient conditions on the SBM model, via the quantity $\Delta(C)$, so that the PECOK algorithm above recovers $B*$, and hence $G*$, exactly with high probability.
+Let $\widehat{\Sigma}=X^tX$.
+PECOK algorithm : \\
+1/ Estimate $B^*$ by $\widehat{B} = \displaystyle{\mbox{argmax}_{B\in \mathcal{C}}\langle\widehat{\Sigma},B\rangle}$\\
+2/ Estimate $G^*$ by applying a clustering algorithm to the columns of $\widehat{B}$.
+
+In this paper, we develop suficient conditions on the SBM model, via the quantity $\Delta(C)$, so that the PECOK algorithm above recovers $B^*$, and hence $G^*$, exactly with high probability.
 
 Our investigation follows the outline of [2], as its main arguments can be adapted to our case. Lemma 1 p.6 and its proof p.16 remain valid and so is Lemma 3 p.16.
-So we only need to prove that $<\widehat{\Sigma}-\widehat{\Gamma},B^*-B> >0$ for all $B \in \mathcal{C} such that \mbox{supp}(B)\nsubseteq \mbox{supp}(B^*) $, with high probability.
-Following the decomposition $(46)$ we write similarly $W = W_1 + W_2 -n\widehat{\Gamma}$.
-[1] Lei, Rinaldo. Consistency of spectral clustering in stochastic block models.
-[2] PECOK : a convex optimization approach to variable clustering.
+So we only need to prove that $\langle\widehat{\Sigma},B^*-B\rangle \ge 0$ for all $B \in \mathcal{C} \mbox{ such that } \mbox{supp}(B)\nsubseteq \mbox{supp}(B^*) $, with high probability.
+Following the decomposition $(46)$ we write similarly $W = W_1 + W_2 + E^2$.
 
-\end{document}
+[1] Lei, Rinaldo. Consistency of spectral clustering in stochastic block models.
+
+[2] PECOK : a convex optimization approach to variable clustering.
