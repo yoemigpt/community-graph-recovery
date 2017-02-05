@@ -1,0 +1,49 @@
+\section*{Lemma 2:}
+
+With probability larger than $1-\frac{2}{n}$ it holds that
+
+\begin{center}
+$|\langle E^2, B^*-B \rangle| \le (7.(C^2+1).[\sum_{j\neq k}|B_{G_jG_k}|_1].\frac{d}{\sqrt{m}})$
+\end{center}
+
+With $d=\mbox{max}(n.\mbox{max}_{i,j} C_{ij}, \mbox{ln}n)$
+
+\section*{Proof:}
+
+if we do the same of (58) we have :
+\begin{align*}
+|\langle E^2, B^*-B \rangle| \le 2.[\sum_{j\neq k}|B_{G_jG_k}|_1](3.|B^*E^2|_{\infty} + \frac{||E^2||_{op}}{2m})
+\end{align*}
+
+\begin{align*}
+||E^2||_{op} &= ||E||_{op}^2 \le 2.(||\mathcal{E}||_{op}^2 + |D|_{\infty}^2)
+\end{align*}
+
+for all $a$ in $G_k$:
+\begin{align*}
+|[B^*E^2]_{a:}|_{\infty} &= \frac{1}{|G_k|}|[E^2.1_{G_k}]|_{\infty} \\ &\le \frac{1}{|G_k|}||[E^2.1_{G_k}]||_2 \le \frac{1}{|G_k|}||E^2||_{op}||1_{G_k}||_2 \\ & \le \frac{1}{\sqrt{m}}||E^2||_{op}
+\end{align*}
+
+And :
+
+\begin{align*}
+|B^*E^2|_{\infty} &= \mbox{max}_{a}|[B^*E^2]_{a:}|_{\infty} \\ & \le \frac{1}{\sqrt{m}}||E^2||_{op}
+\end{align*}
+
+Hence :
+\begin{align*}
+|\langle E^2, B^*-B \rangle| \le 7.[\sum_{j\neq k}|B_{G_jG_k}|_1].\frac{||\mathcal{E}||_{op}^2 + |D|_{\infty}^2}{\sqrt{m}}
+\end{align*}
+
+We use the Theorem 5.1 
+With probability $1-\frac{2}{n}$
+\begin{align*}
+||\mathcal{E}||_{op} \le C\sqrt{d}
+\end{align*}
+
+And : $|D|_{\infty}^2 \le d$
+
+So : 
+\begin{align*}
+|\langle E^2, B^*-B \rangle| \le 7.(C^2+1).[\sum_{j\neq k}|B_{G_jG_k}|_1].\frac{d}{\sqrt{m}}
+\end{align*}
